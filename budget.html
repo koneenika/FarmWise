@@ -1,0 +1,14 @@
+<form method="POST">
+    <input type="text" name="category" placeholder="Category" required>
+    <input type="number" name="amount" placeholder="Budget Amount" required>
+    <button type="submit">Set Budget</button>
+  </form>
+  
+  <h2>Budget</h2>
+  <ul>
+    {% for category, amount in budget.items() %}
+    <li>{{ category }}: ${{ amount }}</li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+  

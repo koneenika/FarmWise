@@ -1,0 +1,13 @@
+<form method="POST">
+    <input type="date" name="start_date" required>
+    <input type="date" name="end_date" required>
+    <button type="submit">Calculate Cash Flow</button>
+  </form>
+  
+  {% if income is defined %}
+    <p>Total Income: ${{ income }}</p>
+    <p>Total Expenses: ${{ expenses }}</p>
+    <p>Net Cash Flow: ${{ net_cash }}</p>
+  {% endif %}
+  <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+  

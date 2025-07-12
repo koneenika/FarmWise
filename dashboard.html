@@ -1,0 +1,11 @@
+<h2>Welcome, {{ username }}</h2>
+<h3>Transactions</h3>
+<ul>
+  {% for transaction in transactions %}
+  <li>{{ transaction.type }}: {{ transaction.amount }} - {{ transaction.category }} on {{ transaction.date }}</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('add_transaction') }}">Add Transaction</a>
+<a href="{{ url_for('balance_sheet') }}">View Balance Sheet</a>
+<a href="{{ url_for('cash_flow') }}">View Cash Flow</a>
+<a href="{{ url_for('budget_page') }}">Manage Budget</a>
